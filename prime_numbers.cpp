@@ -1,14 +1,32 @@
-// C++ program to display "Hello World"
-
-// Header file for input output functions
 #include <iostream>
 using namespace std;
 
-// Main() function: where the execution of program begins
 int main()
 {
-	// prints hello world
-	cout << "Hello World";
+	
+  int i, n;
+  bool is_prime = true;
 
-	return 0;
+  cout << "Enter a positive integer: ";
+  cin >> n;
+
+  // as you always know 0 and 1 are not prime numbers
+  if (n == 0 || n == 1) {
+    is_prime = false;
+  }
+
+  //check if n is prime
+  for (i = 2; i <= n/2; ++i) {
+    if (n % i == 0) {
+      is_prime = true;
+      break;
+    }
+  }
+
+  if (is_prime)
+    cout << n << " is a prime number";
+  else
+    cout << n << " is not a prime number";
+
+  return 0;
 }
